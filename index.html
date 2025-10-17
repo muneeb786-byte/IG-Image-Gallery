@@ -424,14 +424,14 @@
       // Add zoomed image + close button
       overlay.innerHTML = `
       <div class="overlay-content">
-        <button class="close-btn" title="Close">
+        <button class="close-btn" title="Close" style="right: 100px;">
           <svg xmlns="http://www.w3.org/2000/svg" 
                viewBox="0 0 24 24" width="28" height="28" fill="white">
             <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
           </svg>
         </button>
         <img src="${img.src}" class="zoomed">
-        <button class="download-btn" title="Download Image" >Download</button>
+        <button class="download-btn" title="Download Image" style="right: 100px;" >Download</button>
       </div>
     `;
 
@@ -479,5 +479,6 @@
 
 
 </html>
+
 
 
