@@ -341,7 +341,7 @@ ul.sidebar {
   .close-btn {
     width: 25px;
     height: 25px;
-    right: 35px;
+    right: 35px !important;
   }
 
   .close-btn svg{
@@ -350,7 +350,8 @@ ul.sidebar {
   }
 
   .download-btn{
-     right: 40px;
+     right: 40px !important;
   }
+
 
 
