@@ -339,8 +339,13 @@ ul.sidebar {
   }
 
   .close-btn {
-    padding: 2px 4px;
-    right: 20px;
+    padding: 4px 6px;
+    right: 25px;
   }
 
+  .download-btn{
+    
+    right: 15px;
+
 }
+
