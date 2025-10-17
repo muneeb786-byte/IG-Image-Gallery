@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="links"> <a href="/photos.html"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                        viewBox="0 -960 960 960" width="24px" fill="black">
+                        <path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z" />
+                    </svg></a>
+                <h2>Cars</h2>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="gallery">
+            </div>
+        </section>
+    </main>
+
+</body>
+
+
+
+<script>
+    const API_KEY = "KuYPltiInS50eJHTtCBnDHoXAlgOeOPcSWmRwvdZxCc5VHVVzYpNN4NL";
+    const gallery = document.querySelector(".gallery");
+
+    async function loadCategory(category = "nature") {
+        const url = `https://api.pexels.com/v1/search?query=${category}&per_page=50`;
+        const response = await fetch(url, { headers: { Authorization: API_KEY } });
+        const data = await response.json();
+
+        gallery.innerHTML = data.photos
+            .map(photo => `<div class="item"><img src="${photo.src.landscape}" alt="${photo.photographer}"> </div>`)
+            .join('');
+    }
+
+    loadCategory("car");
+
+    setTimeout(() => {
+        const images = document.querySelectorAll(".item img");
+
+        images.forEach(img => {
+            img.addEventListener("click", () => {
+                // Create overlay
+                const overlay = document.createElement("div");
+                overlay.classList.add("overlay");
+
+                // Add zoomed image + close button
+                overlay.innerHTML = `
+      <div class="overlay-content">
+        <button class="close-btn" title="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               viewBox="0 0 24 24" width="28" height="28" fill="#2e2e2e">
+            <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <img src="${img.src}" class="zoomed">
+        <button class="download-btn" title="Download Image" >Download</button>
+      </div>
+    `;
+
+                document.body.appendChild(overlay);
+
+                // Close when button clicked
+                const closeBtn = overlay.querySelector(".close-btn");
+                closeBtn.addEventListener("click", () => overlay.remove());
+
+                // Also close when user clicks outside image area
+                overlay.addEventListener("click", (e) => {
+                    if (e.target === overlay) overlay.remove();
+                });
+
+                const downloadBtn = document.querySelector(".download-btn");
+                const zoomedImg = document.querySelector(".zoomed");
+
+                downloadBtn.addEventListener("click", async () => {
+                    const imageURL = zoomedImg.src;
+                    const fileName = "gallery-image-" + Date.now() + ".jpg";
+
+                    try {
+                        const response = await fetch(imageURL);
+                        const blob = await response.blob();
+                        const link = document.createElement("a");
+                        link.href = URL.createObjectURL(blob);
+                        link.download = fileName;
+                        link.click();
+                        URL.revokeObjectURL(link.href); // cleanup memory
+                    } catch (error) {
+                        alert("Download failed 😕");
+                    }
+                });
+            });
+        });
+    }, 4000);
+</script>
+
+</html>

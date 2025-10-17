@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery - Photos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <nav>
+             <img src="images/logo2.png" alt="logo">
+            <ul>
+                <li class="nav-links"><a href="/index.html">Home</a></li>
+                <li class="nav-links active"><a href="/photos.html">Photos</a></li>
+                <li class="hide" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="40px"
+                        viewBox="0 -960 960 960" width="40px" fill="#fff">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg></li>
+            </ul>
+
+
+        </nav>
+
+        <ul class="sidebar">
+            <li onclick=hideSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960"
+                    width="26px" fill="#e2e2e2">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/photos.html">Photos</a></li>
+
+        </ul>
+
+    </header>
+
+    <main>
+        <h2 style="color: white; margin-left: 25px; margin-bottom: 20px;">Categories</h2>
+        <section>
+            
+            <div class="category">
+                <div class="item"><a href="/nature.html"><img src="images/nature.png" alt=""> <a href="/nature.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Nature</span></div>
+                <div class="item"><a href="/mountains.html"><img src="images/mountain.png" alt=""> <a href="/mountains.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Mountains</span></div>
+                <div class="item"><a href="/photography.html"><img src="images/photography.png" alt=""> <a href="/photography.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Photography</span></div>
+                <div class="item"><a href="/food.html"><img src="images/food.png" alt=""> <a href="/food.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Food</span></div>
+                <div class="item"><a href="/cities.html"><img src="images/cities.png" alt=""> <a href="/cities.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Cities</span></div>
+                <div class="item"><a href="/technology.html"><img src="images/technology.png" alt=""> <a href="/technology.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Technology</span></div>
+                <div class="item"><a href="/cars.html"><img src="images/cars.png" alt=""> <a href="/cars.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Cars</span></div>
+                <div class="item"><a href="/animals.html"><img src="images/animals.png" alt=""> <a href="/animals.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Animals</span></div>
+                <div class="item"><a href="/human.html"><img src="images/humans.png" alt=""> <a href="/human.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a> <span>Human</span></div>
+                <div class="item"><a href="/fashion.html"><img src="images/fashion.png" alt=""> <a href="/fashion.html"><svg
+                                xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#2e2e2e">
+                                <path d="m256-240-56-56 384-384H240v-80h480v480h-80v-344L256-240Z" />
+                            </svg></a></a>
+                    <span>Fashion</span>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+<script>
+
+    function showSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.display = 'block';
+    }
+
+    function hideSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        sidebar.style.display = 'none';
+    }
+
+</script>
+
+</html>
